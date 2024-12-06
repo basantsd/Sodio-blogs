@@ -1,0 +1,10 @@
+RewriteEngine On
+# Redirect all requests not pointing directly to files to index.php
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^ index.php [QSA,L]
+
+<Files "*.inc.php">
+    Order deny,allow
+    Deny from all
+</Files>
